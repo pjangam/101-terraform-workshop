@@ -1,12 +1,12 @@
 resource "aws_key_pair" "ssh_key" {
-  key_name = "anuj-workshop" // replace with your key
-  public_key = "" // replace with you public IP
+  key_name = "training"
+  public_key = ""
 }
 
 resource "aws_instance" "first_instance" {
   ami = "ami-04b9e92b5572fa0d1"
 
-  subnet_id = aws_subnet.public_subnet_1.id
+  subnet_id = "subnet-2d5bb123"
 
   key_name = aws_key_pair.ssh_key.key_name
 
